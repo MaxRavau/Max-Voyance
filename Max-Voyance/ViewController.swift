@@ -14,10 +14,11 @@ class ViewController: UIViewController {
     @IBOutlet var viewLabelPhrase: UIView!
     @IBOutlet var viewEffet: UIVisualEffectView!
     @IBOutlet var labelPhrase: UILabel!
+    @IBOutlet var labelTime: UILabel!
     
     var effet: UIVisualEffect!
     
-    var index = 0
+    var counter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,36 @@ class ViewController: UIViewController {
         viewLabelPhrase.layer.borderColor = UIColor.black.cgColor
         viewLabelPhrase.layer.borderWidth = 1
         
+        labelPhrase.text = listeDePhrase[2]
+        
+        date()
+        
     }
+    
+    
+    
+    
+    func refreshLigne() {
+        
+        var now = Date()
+        
+        
+        
+        
+    }
+    
+    
+    func date(){
+        
+        let date = Date()
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        
+        labelTime.text = "\(formatter.string(from: date))"
+    }
+    
     
     func animateIn(){
         
