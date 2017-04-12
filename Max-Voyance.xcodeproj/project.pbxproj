@@ -14,6 +14,7 @@
 		508A3CA11E9E302C00DEDEA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508A3C9F1E9E302C00DEDEA1 /* LaunchScreen.storyboard */; };
 		508A3CAC1E9E302C00DEDEA1 /* Max_VoyanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A3CAB1E9E302C00DEDEA1 /* Max_VoyanceTests.swift */; };
 		508A3CB71E9E302C00DEDEA1 /* Max_VoyanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A3CB61E9E302C00DEDEA1 /* Max_VoyanceUITests.swift */; };
+		508A3CC51E9E503400DEDEA1 /* Constante.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508A3CC41E9E503400DEDEA1 /* Constante.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		508A3CB21E9E302C00DEDEA1 /* Max-VoyanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Max-VoyanceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		508A3CB61E9E302C00DEDEA1 /* Max_VoyanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Max_VoyanceUITests.swift; sourceTree = "<group>"; };
 		508A3CB81E9E302C00DEDEA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		508A3CC41E9E503400DEDEA1 /* Constante.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constante.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				508A3C961E9E302C00DEDEA1 /* AppDelegate.swift */,
+				508A3CC41E9E503400DEDEA1 /* Constante.swift */,
 				508A3C981E9E302C00DEDEA1 /* ViewController.swift */,
 				508A3C9A1E9E302C00DEDEA1 /* Main.storyboard */,
 				508A3C9D1E9E302C00DEDEA1 /* Assets.xcassets */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508A3CC51E9E503400DEDEA1 /* Constante.swift in Sources */,
 				508A3C991E9E302C00DEDEA1 /* ViewController.swift in Sources */,
 				508A3C971E9E302C00DEDEA1 /* AppDelegate.swift in Sources */,
 			);
@@ -414,7 +418,7 @@
 		508A3CBC1E9E302C00DEDEA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon3;
 				DEVELOPMENT_TEAM = TV7MS89DG8;
 				INFOPLIST_FILE = "Max-Voyance/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -427,7 +431,7 @@
 		508A3CBD1E9E302C00DEDEA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon3;
 				DEVELOPMENT_TEAM = TV7MS89DG8;
 				INFOPLIST_FILE = "Max-Voyance/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -514,6 +518,7 @@
 				508A3CBD1E9E302C00DEDEA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		508A3CBE1E9E302C00DEDEA1 /* Build configuration list for PBXNativeTarget "Max-VoyanceTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				508A3CC01E9E302C00DEDEA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		508A3CC11E9E302C00DEDEA1 /* Build configuration list for PBXNativeTarget "Max-VoyanceUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				508A3CC31E9E302C00DEDEA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
