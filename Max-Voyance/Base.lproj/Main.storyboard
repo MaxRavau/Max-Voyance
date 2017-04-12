@@ -111,7 +111,7 @@
                                 <constraint firstAttribute="height" constant="388" id="LoX-CI-uSO"/>
                                 <constraint firstAttribute="width" constant="286" id="fQE-XZ-i5Q"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>

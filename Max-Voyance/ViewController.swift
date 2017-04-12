@@ -18,10 +18,23 @@ class ViewController: UIViewController {
     
     var effet: UIVisualEffect!
     
-    var counter = 0
+    var counter = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initUI()
+        
+    }
+    
+    func initUI() {
+        
+        date()
+        refreshLigne()
+        effetVisual()
+    }
+    
+    func effetVisual(){
         
         effet = viewEffet.effect
         viewEffet.effect = nil
@@ -30,22 +43,25 @@ class ViewController: UIViewController {
         viewLabelPhrase.layer.borderColor = UIColor.black.cgColor
         viewLabelPhrase.layer.borderWidth = 1
         
-        labelPhrase.text = listeDePhrase[2]
-        
-        date()
         
     }
     
     
-    
-    
     func refreshLigne() {
         
-        var now = Date()
         
         
+        let cal = NSCalendar.current
+        
+        var comps = cal.dateComponents([.era, .year, .month, .day, .hour, .minute], from: Date())
         
         
+        //if comps.day += 1 {
+            
+        //    counter += 1
+       // }
+        
+        labelPhrase.text = listeDePhrase[counter]
     }
     
     

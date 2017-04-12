@@ -25,7 +25,7 @@
                                 <rect key="frame" x="-133" y="93.5" width="640" height="480"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX-VOYANCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ak-cR-RlF">
-                                <rect key="frame" x="16" y="28" width="343" height="28"/>
+                                <rect key="frame" x="16" y="47" width="343" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="VrP-zx-26t"/>
                                     <constraint firstAttribute="width" constant="343" id="eG6-Kv-tol"/>
@@ -34,23 +34,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pour un Max de Voyance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6b0-3e-qBc">
-                                <rect key="frame" x="93" y="64" width="189" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Fa9-sz-591"/>
-                                    <constraint firstAttribute="width" constant="189" id="nIU-eB-SDl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="q3Z-7l-pwY" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3If-AP-bqI"/>
-                            <constraint firstItem="6b0-3e-qBc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8EE-hZ-eqd"/>
-                            <constraint firstItem="1Ak-cR-RlF" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" id="YCg-0n-JTJ"/>
-                            <constraint firstItem="6b0-3e-qBc" firstAttribute="top" secondItem="1Ak-cR-RlF" secondAttribute="bottom" constant="8" id="dqp-GB-zaO"/>
+                            <constraint firstItem="1Ak-cR-RlF" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="27" id="YCg-0n-JTJ"/>
                             <constraint firstItem="q3Z-7l-pwY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="h7d-iK-Hlc"/>
                             <constraint firstItem="1Ak-cR-RlF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="mF3-Wv-q8h"/>
                         </constraints>
