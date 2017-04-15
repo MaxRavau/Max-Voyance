@@ -12,13 +12,13 @@ class ViewController: UIViewController {
     
 
     @IBOutlet var viewLabelPhrase: UIView!
-    @IBOutlet var viewEffet: UIVisualEffectView!
     @IBOutlet var labelPhrase: UILabel!
     @IBOutlet var labelTime: UILabel!
+    @IBOutlet var buttonImageBoule: UIButton!
     
-    var effet: UIVisualEffect!
+    //var effet: UIVisualEffect!
     
-    var counter = 1
+    var counter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +30,28 @@ class ViewController: UIViewController {
     func initUI() {
         
         date()
-        refreshLigne()
-        effetVisual()
+        retrieveHistorique()
+        
     }
     
     func effetVisual(){
         
-        effet = viewEffet.effect
-        viewEffet.effect = nil
+       
         
         viewLabelPhrase.layer.cornerRadius = 5
         viewLabelPhrase.layer.borderColor = UIColor.black.cgColor
         viewLabelPhrase.layer.borderWidth = 1
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+        
+        refreshLigne()
+        
+        labelPhrase.text = listeDePhrase[counter]
         
     }
     
@@ -55,13 +64,13 @@ class ViewController: UIViewController {
         
         var comps = cal.dateComponents([.era, .year, .month, .day, .hour, .minute], from: Date())
         
-        
-        //if comps.day += 1 {
+        if  comps.minute == comps.minute! + 1{
+ 
             
-        //    counter += 1
-       // }
+           self.counter += 1
+        }
         
-        labelPhrase.text = listeDePhrase[counter]
+        
     }
     
     
@@ -87,8 +96,8 @@ class ViewController: UIViewController {
         
         UIView.animate(withDuration: 0.4) {
             
-            self.viewEffet.effect = self.effet
-            self.viewLabelPhrase.alpha = 1
+            
+            self.viewLabelPhrase.alpha = 0.8
             self.viewLabelPhrase.transform = CGAffineTransform.identity
             
             
@@ -103,19 +112,125 @@ class ViewController: UIViewController {
             self.viewLabelPhrase.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
             self.viewLabelPhrase.alpha = 0
             
-            self.viewEffet.effect = nil
+            
             
         }) { (success: Bool) in
             self.viewLabelPhrase.removeFromSuperview()
         }
     }
-
-    @IBAction func buttonTapView(_ sender: Any) {
     
-        animateIn()
+    func SaveTapDate(){
+        
+    historique.append(Date())
+        
+        print(historique)
+        
+    }
+    
+    
+    func checkLastDate(){
+        
+        
+        if historique.count > 2 {
+        
+            
+            if lastDatesAreEqualToday() == true{
+                
+                labelPhrase.text = "Rendez vous Demain pour de nouvelles Phrases!!"
+            
+            }else{
+               
+                generatePhrase()
+            }
+            
+        
+        }else{
+            
+            generatePhrase()
+            
+            
+        }
 
     }
     
+    
+    func SaveHistorique(){
+        
+        
+        let defaults = UserDefaults.standard
+        defaults.set(historique, forKey: "SavedDateArray")
+        
+    }
+    
+    func retrieveHistorique(){
+        
+        let defaults = UserDefaults.standard
+        let array = defaults.array(forKey: "SavedDateArray")  as? [Date] ?? [Date]()
+        
+        historique = array
+        
+    }
+    
+    func generatePhrase(){
+        
+        let randomNum:UInt32 = arc4random_uniform(UInt32(listeDePhrase.count))
+        
+        // convert the UInt32 to some other  types
+        
+        let someInt:Int = Int(randomNum)
+        
+        labelPhrase.text = listeDePhrase[someInt]
+        
+        
+    }
+    
+    func lastDatesAreEqualToday() -> Bool{
+        
+        var lastDate = historique.last!
+        var lastDate1 = historique.last! - 1
+        
+        let date = Date()
+        let calendar = Calendar.current
+        
+        let dayToday = calendar.component(.day, from: date)
+        let monthToday = calendar.component(.month, from: date)
+        
+        let dayLastDate = calendar.component(.day, from: lastDate)
+        let monthLastDate = calendar.component(.month, from: lastDate)
+        
+        let dayLastDate1 = calendar.component(.day, from: lastDate1)
+        let monthLastDate1 = calendar.component(.month, from: lastDate1)
+        
+        
+        
+        
+        if dayLastDate == dayToday && dayLastDate1 == dayToday{
+            
+            
+            return true
+        
+        }else{
+            
+            return false
+        }
+        
+    }
+    
+    
+    
+    @IBAction func buttonTapBoule(_ sender: Any) {
+    
+        SaveHistorique()
+        
+        SaveTapDate()
+        
+        checkLastDate()
+        
+        animateIn()
+        
+        
+    
+    }
 
     @IBAction func dismissButtonTap(_ sender: Any) {
         
