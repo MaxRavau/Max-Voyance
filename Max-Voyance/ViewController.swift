@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     //var effet: UIVisualEffect!
     
-    var counter = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,29 +49,11 @@ class ViewController: UIViewController {
         
         
         
-        refreshLigne()
-        
-        labelPhrase.text = listeDePhrase[counter]
+        checkLastDate()
+        generatePhrase()
         
     }
     
-    
-    func refreshLigne() {
-        
-        
-        
-        let cal = NSCalendar.current
-        
-        var comps = cal.dateComponents([.era, .year, .month, .day, .hour, .minute], from: Date())
-        
-        if  comps.minute == comps.minute! + 1{
- 
-            
-           self.counter += 1
-        }
-        
-        
-    }
     
     
     func date(){
